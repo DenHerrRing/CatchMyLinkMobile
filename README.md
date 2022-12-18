@@ -1,7 +1,7 @@
 # MyLinks
 
 ## Important!
-This is a hobby project. Currently there is no production version that would be executable!
+This is a hobby project. Currently, there is no production version that would be executable!
 I use this project to try out new things and to refresh and expand my skills.
 
 You want to support me? I'd love to! Get in touch with me!
