@@ -1,0 +1,49 @@
+<div class="card w-auto bg-base-50 shadow-xl image-full mb-2">
+    <figure class="text-center">
+        <svg-icon [name]="link.linkType.iconEnumKey" [svgClass]="'w-1/2 inline-block'"></svg-icon>
+    </figure>
+
+    <div class="card-body">
+
+        <div class="grid grid-cols-2">
+            <div>
+                <h2 class="card-title text-white">{{link.name}}</h2>
+                <small class="text-white">{{link.accountName}}</small>
+            </div>
+            <div class="text-end">
+                <div *ngIf="link.active" class="badge badge-success badge-outline">Öffentlich</div>
+                <div *ngIf="!link.active" class="badge badge-danger badge-outline">Privat</div>
+                <button class="btn btn-sm btn-square ml-4" (click)="showDeleteLinkModal = true">
+                    <svg-icon name="trash" [svgClass]="'h-5 w-5 text-red'"></svg-icon>
+                </button>
+            </div>
+        </div>
+
+        <div class="card-actions justify-center">
+            <button class="btn" (click)="showNfcModal = true" *ngIf="coreService?.enableNfc">
+                <div class="badge">
+                    <svg-icon name="nfc" [svgClass]="'h-5 w-5'"></svg-icon>
+                </div>
+                Share NFC
+            </button>
+            <button class="btn" (click)="showQrModal = true" *ngIf="coreService?.enableQr">
+                <div class="badge">
+                    <svg-icon name="qrcode" [svgClass]="'h-5 w-5 text-gray-400'"></svg-icon>
+                </div>
+                Share QR
+            </button>
+            <button class="btn" (click)="showEditLinkModal = true" >
+                <div class="badge">
+                    <svg-icon name="pencil" [svgClass]="'h-5 w-5 text-gray-400'"></svg-icon>
+                </div>
+                Bearbeiten
+            </button>
+        </div>
+    </div>
+</div>
+
+<modal-share-qr [isVisible]="showQrModal" [link]="link" (closeModal)="showQrModal = $event"></modal-share-qr>
+<modal-share-nfc [isVisible]="showNfcModal" (closeModal)="showNfcModal = $event"></modal-share-nfc>
+<modal-edit-link [isVisible]="showEditLinkModal" [link]="link" (closeModal)="showEditLinkModal = $event"
+                     (saveLink)="link = $event; showEditLinkModal = false"></modal-edit-link>
+<modal-delete-link [isVisible]="showDeleteLinkModal" [link]="link" (closeModal)="showDeleteLinkModal = $event"></modal-delete-link>

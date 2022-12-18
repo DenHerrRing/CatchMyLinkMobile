@@ -1,0 +1,42 @@
+<input type="checkbox" id="my-modal" class="modal-toggle" [(ngModel)]="isVisible"/>
+<div class="modal" *ngIf="isVisible">
+    <div class="modal-box relative">
+        <label for="my-modal" class="btn btn-sm btn-circle absolute right-2 top-2" (click)="onClickCloseModal()">✕</label>
+        <h3 class="font-bold text-lg">Neuer Link</h3>
+        <p class="py-4">Hier kannst du einen neuen Link zu deiner Sammlung hinzufügen!</p>
+
+        <form>
+
+            <div class="form-control w-full max-w-xs">
+                <label class="label">
+                    <span class="label-text">Anbieter</span>
+                </label>
+                <select class="select select-bordered" [ngModel]="newLink.linkType" (ngModelChange)="setNewLinkType($event)" name="linkType">
+                    <option disabled>Wähle einen Anbieter!</option>
+                    <option *ngFor="let type of linkTypeService.linkTypes" [value]="type.iconEnumKey">{{type.name}}</option>
+                </select>
+            </div>
+
+            <div class="form-control w-full max-w-xs">
+                <label class="label">
+                    <span class="label-text">Account</span>
+                </label>
+                <input type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs" [(ngModel)]="newLink.accountName" name="accountName"/>
+                <label class="label">
+                    <span class="label-text-alt">{{newLink.linkType.preUrl}}/</span>
+                </label>
+            </div>
+
+            <div class="form-control">
+                <label class="label cursor-pointer">
+                    <span class="label-text">Ist dieser Link öffentlich?</span>
+                    <input type="checkbox" class="toggle" [(ngModel)]="newLink.active" name="active"/>
+                </label>
+            </div>
+        </form>
+
+        <div class="modal-action">
+            <button class="btn btn-block btn-success" (click)="onClickSaveLink(newLink)">Speichern</button>
+        </div>
+    </div>
+</div>

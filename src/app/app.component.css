@@ -1,0 +1,7 @@
+.active-link {
+    @apply bg-gray-900 text-white
+}
+
+.active-icon {
+    @apply text-gray-300
+}

@@ -1,27 +1,29 @@
 # MyLinks
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.0-next.3.
+## Important!
+This is a hobby project. Currently there is no production version that would be executable!
+I use this project to try out new things and to refresh and expand my skills.
 
-## Development server
+You want to support me? I'd love to! Get in touch with me!
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Overview
 
-## Code scaffolding
+I have repeatedly come across various service providers on the internet who offer a small "homepage" to share my social links.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+At events, you see more and more people wearing a badge with a QR code printed on it. Some can even send data directly to other people's mobile phones via NFC.
 
-## Build
+I thought this is a great idea.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+That's how the idea of my own app "MyLinks" (currently still a project name. I am still looking for a real name) was born.
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## NPM Packages in use
+- [daisyUI](https://daisyui.com/docs/install/)
+- [angular-svg-icon](https://www.npmjs.com/package/angular-svg-icon)
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Icons Credentials
+- [HeroIcons](https://heroicons.com/)
+- [SimpleIcons](https://github.com/simple-icons/simple-icons)
+- [SVG Repro Tiny App Icons](https://www.svgrepo.com/collection/tiny-app-icons/)
+- [QR-Code](https://github.com/cordobo/angularx-qrcode#readme)

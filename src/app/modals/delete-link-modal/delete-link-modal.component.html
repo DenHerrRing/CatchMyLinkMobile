@@ -1,0 +1,18 @@
+<input type="checkbox" id="my-modal" class="modal-toggle" [(ngModel)]="isVisible"/>
+<div class="modal" *ngIf="isVisible">
+    <div class="modal-box relative">
+        <label for="my-modal" class="btn btn-sm btn-circle absolute right-2 top-2" (click)="onClickCloseModal()">✕</label>
+        <h3 class="font-bold text-lg">Link Löschen!</h3>
+        <p class="py-4 text-center">
+            Bist du dir sicher, dass du den Link <br> <strong>{{link.name}} ({{link.accountName}})</strong> <br> löschen möchtest?
+        </p>
+
+        <p class="py-4 text-center">
+            Deine Entscheidung ist endgültig!
+        </p>
+
+        <div class="modal-action">
+            <button class="btn btn-block btn-danger" (click)="onClickDeleteLink(link)">Löschen</button>
+        </div>
+    </div>
+</div>

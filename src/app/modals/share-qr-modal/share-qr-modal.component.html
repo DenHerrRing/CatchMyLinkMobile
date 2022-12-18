@@ -1,0 +1,19 @@
+<input type="checkbox" id="my-modal" class="modal-toggle" [(ngModel)]="isVisible"/>
+<div class="modal" *ngIf="isVisible">
+    <div class="modal-box items-center text-center">
+        <h3 class="font-bold text-lg">Share per QR Code</h3>
+
+        <figure class="px-8 pt-8">
+            <qrcode [qrdata]="getUrlData()" [width]="256" [errorCorrectionLevel]="'M'"></qrcode>
+        </figure>
+
+        <p class="py-4">
+            <strong>{{link.name}}</strong> <br>
+            <small>{{link.linkType.preUrl}}/{{link.accountName}}</small>
+        </p>
+
+        <div class="modal-action flex">
+            <label for="my-modal" class="btn btn-success mx-auto" (click)="onClickCloseModal()">Fertig</label>
+        </div>
+    </div>
+</div>

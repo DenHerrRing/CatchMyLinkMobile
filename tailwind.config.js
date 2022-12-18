@@ -1,0 +1,17 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+    content: [
+        "./src/**/*.{html,ts}",
+    ],
+    theme: {
+        extend: {},
+    },
+    daisyui: {
+        themes: ["light", "dark", "forest", "dracula"],
+    },
+    plugins: [
+        require('@tailwindcss/forms'),
+        require('@tailwindcss/typography'),
+        require("daisyui"),
+    ],
+}

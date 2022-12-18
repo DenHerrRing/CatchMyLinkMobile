@@ -1,0 +1,22 @@
+<div class="py-6">
+
+    <div class="grid grid-cols-3 gap-4 px-4">
+        <div class="col-span-2">
+            <h1 class="text-2xl font-semibold text-gray-900 pt-2">Links</h1>
+        </div>
+        <div class="btn btn-square btn-outline text-right ml-14" (click)="showNewLinkModal = true">
+            <svg-icon name="plus" [svgClass]="'inline-block h-6 w-6 text-black'"></svg-icon>
+        </div>
+    </div>
+
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
+        <!-- Replace with your content -->
+        <div class="py-4">
+            <component-link-type-list [links]="storageService.getLinks()"></component-link-type-list>
+        </div>
+        <!-- /End replace -->
+    </div>
+</div>
+
+<modal-new-link [isVisible]="showNewLinkModal" (closeModal)="showNewLinkModal = $event"
+                    (saveLink)="saveLink($event)"></modal-new-link>
