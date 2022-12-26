@@ -1,4 +1,4 @@
-# MyLinks
+# CatchMy.Link (Mobile App)
 
 ## Important!
 This is a hobby project. Currently, there is no production version that would be executable!
